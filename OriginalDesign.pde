@@ -1,10 +1,15 @@
-int Duckpos = 0;
+int eggPosX = 200;
+int eggPosY = 220;
 void setup()
 {
   size(500,500);
+  noLoop();
+
 }
 void draw()
 {
+	background(255, 255, 255);
+	egg();
 	bill();
 	duckbody();
 	wing();
@@ -44,4 +49,13 @@ void bill()
 	stroke(0, 0, 0);
 	fill(255, 150, 0);
 	ellipse(180, 135, 80, 40);
+}
+void egg()
+{
+	ellipse(eggPosX, eggPosY, 40, 55);
+	eggPosX = eggPosX + 10;
+}
+void mousePressed()
+{
+	redraw();
 }
