@@ -1,5 +1,5 @@
-int eggPosX = 200;
-int eggPosY = 220;
+int eggPosY = 210;
+int eggPosX = 285;
 void setup()
 {
   size(500,500);
@@ -18,8 +18,8 @@ void draw()
 void duckbody()
 {
 	stroke(0, 0, 0);
-	ellipse(220, 285, 50, 20);
-	ellipse(260, 285, 50, 20);
+	ellipse(225, 285, 50, 20);
+	ellipse(265, 285, 50, 20);
 	fill(255, 155, 0);
 	rect(220, 195.0 , 15, 80);
 	rect(260, 195.9, 15, 80);
@@ -53,7 +53,13 @@ void bill()
 void egg()
 {
 	ellipse(eggPosX, eggPosY, 40, 55);
-	eggPosX = eggPosX + 10;
+	eggPosX = eggPosX + 20;
+	eggPosY = eggPosY + 25;
+	if (eggPosY>=500) 
+	{
+		eggPosY = 210;
+		eggPosX = 285;
+	}
 }
 void mousePressed()
 {
